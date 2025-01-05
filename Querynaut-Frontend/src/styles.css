@@ -1,17 +1,64 @@
+/* Define color variables */
 :root {
-  --primary-color: #141b1e;
-  --secondary-color: #5a5f61;
-  --accent-color: #f4511e;
-  --footer-color: white;
-  --text-color: white;
+  --primary-color: #4caf50;
+  --secondary-color: #f1f1f1;
+  --text-color: #333;
+  --message-background: #f9f9f9;
+  --bot-message-background: #f1f1f1;
+  --user-message-background: #4caf50;
+  --input-background: #fff;
+  --input-border-color: #ccc;
+  --button-color: #4caf50;
+  --button-hover-color: #45a049;
 }
 
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--message-background);
+}
+
+header {
   background-color: var(--primary-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 0.1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dropdown-container {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
 }

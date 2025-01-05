@@ -1,0 +1,22 @@
+<div class="chat-wrapper">
+  <main>
+    <div class="chat-container">
+      <div class="chat-header">
+        <p>Chat Support</p>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <p *ngFor="let message of messages" [ngClass]="message.type">
+          {{ message.text }}
+        </p>
+      </div>
+      <div class="chat-input-container">
+        <input
+          type="text"
+          [(ngModel)]="userMessage"
+          placeholder="Type your message here..."
+        />
+        <button (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+  </main>
+</div>

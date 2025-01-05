@@ -1,0 +1,86 @@
+/* Chat container styles - make the chat smaller and adjust height */
+.chat-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Reduce the width */
+  height: 400px; /* Set the height to fit messages */
+  margin: 0 auto; /* Center the chat */
+}
+
+/* Chat header */
+.chat-header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Chat message container */
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds space between messages */
+}
+
+/* Style for bot messages */
+.bot-message {
+  color: #555;
+  background-color: #f1f1f1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 80%;
+  align-self: flex-start; /* Align bot messages to the left */
+}
+
+/* Style for user messages */
+.user-message {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 80%;
+  align-self: flex-end; /* Align user messages to the right */
+}
+
+/* Input area container */
+.chat-input-container {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+
+/* Input field */
+.chat-input-container input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0 0 0 8px;
+  font-size: 1rem;
+}
+
+/* Button */
+.chat-input-container button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 8px 0;
+}
+
+.chat-input-container button:hover {
+  background-color: #45a049;
+}
