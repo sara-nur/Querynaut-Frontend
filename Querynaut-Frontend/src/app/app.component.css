@@ -1,8 +1,7 @@
-/* Ensures the AppComponent uses full height for the layout */
 :host {
   display: block;
   height: 100%;
-  background-color: var(--message-background); /* Use the background color */
+  background-color: var(--message-background);
 }
 
 main {
@@ -11,5 +10,5 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Adds space between the dropdown and the chat */
+  gap: 20px;
 }

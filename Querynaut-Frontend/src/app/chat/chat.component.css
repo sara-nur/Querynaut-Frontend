@@ -1,16 +1,14 @@
-/* Chat container styles - make the chat smaller and adjust height */
 .chat-container {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  max-width: 400px; /* Reduce the width */
-  height: 400px; /* Set the height to fit messages */
-  margin: 0 auto; /* Center the chat */
+  max-width: 450px;
+  height: 600px;
+  margin: 0 auto;
 }
 
-/* Chat header */
 .chat-header {
   background-color: var(--primary-color);
   color: white;
@@ -21,7 +19,6 @@
   border-top-right-radius: 8px;
 }
 
-/* Chat message container */
 .chat-messages {
   flex: 1;
   padding: 1rem;
@@ -29,10 +26,9 @@
   border-bottom: 1px solid #ccc;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adds space between messages */
+  gap: 10px;
 }
 
-/* Style for bot messages */
 .bot-message {
   color: #555;
   background-color: #f1f1f1;
@@ -40,21 +36,19 @@
   border-radius: 8px;
   width: fit-content;
   max-width: 80%;
-  align-self: flex-start; /* Align bot messages to the left */
+  align-self: flex-start;
 }
 
-/* Style for user messages */
 .user-message {
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--user-message-background);
   padding: 0.5rem;
   border-radius: 8px;
   width: fit-content;
   max-width: 80%;
-  align-self: flex-end; /* Align user messages to the right */
+  align-self: flex-end;
 }
 
-/* Input area container */
 .chat-input-container {
   display: flex;
   border-top: 1px solid #ccc;
@@ -62,23 +56,29 @@
   background-color: #fff;
 }
 
-/* Input field */
-.chat-input-container input {
+.chat-input-container textarea {
   flex: 1;
-  padding: 0.5rem;
+  padding: 0.15rem;
+  margin: 0 7px 0 3px;
   border: none;
-  border-radius: 0 0 0 8px;
   font-size: 1rem;
+  border-radius: 4px;
+  resize: none;
+  overflow-y: hidden;
+  min-height: 25px;
+  max-height: 150px;
+  box-sizing: border-box;
+  transition: height 0.3s ease;
+  font-family: "Arial", sans-serif;
 }
 
-/* Button */
 .chat-input-container button {
   padding: 0.5rem 1rem;
   background-color: var(--primary-color);
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 0 0 8px 0;
+  border-radius: 4px;
 }
 
 .chat-input-container button:hover {

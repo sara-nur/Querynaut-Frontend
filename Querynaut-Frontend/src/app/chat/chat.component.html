@@ -10,11 +10,12 @@
         </p>
       </div>
       <div class="chat-input-container">
-        <input
-          type="text"
+        <textarea
           [(ngModel)]="userMessage"
-          placeholder="Type your message here..."
-        />
+          (input)="onInput($event)"
+          (keydown)="onKeydown($event)"
+          placeholder="Type your message..."
+        ></textarea>
         <button (click)="sendMessage()">Send</button>
       </div>
     </div>

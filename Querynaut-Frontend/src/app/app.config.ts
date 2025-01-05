@@ -11,8 +11,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter([]),
     provideAnimations(),
-    importProvidersFrom(FormsModule), // Import FormsModule
-    provideHttpClient(withFetch()), // Configure HttpClient with fetch APIs
+    importProvidersFrom(FormsModule),
+    provideHttpClient(withFetch()),
     { provide: 'bootstrap', useValue: AppComponent },
   ],
 };

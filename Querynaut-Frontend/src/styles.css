@@ -1,18 +1,16 @@
-/* Define color variables */
 :root {
-  --primary-color: #4caf50;
-  --secondary-color: #f1f1f1;
+  --primary-color: #123524;
+  --secondary-color: #efe3c2;
   --text-color: #333;
   --message-background: #f9f9f9;
   --bot-message-background: #f1f1f1;
-  --user-message-background: #4caf50;
+  --user-message-background: #85a947;
   --input-background: #fff;
   --input-border-color: #ccc;
-  --button-color: #4caf50;
+  --button-color: #3e7b27;
   --button-hover-color: #45a049;
 }
 
-/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;

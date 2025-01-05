@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
-import { NgFor, NgIf } from '@angular/common'; // Import Angular core directives
+import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [FormsModule, NgIf, NgFor, CommonModule], // Add FormsModule here
+  imports: [FormsModule, NgIf, NgFor, CommonModule],
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent {
-  companies = ['Company 1', 'Company 2', 'Company 3'];
-  selectedCompany = 'Company 1';
   messages: { text: string; type: string }[] = [
     {
       text: 'Welcome to Querynaut Support! How can I assist you today?',
@@ -22,7 +20,6 @@ export class ChatComponent {
   ];
   userMessage = '';
 
-  // Inject HttpClient
   constructor(private http: HttpClient) {}
 
   sendMessage() {
@@ -55,6 +52,24 @@ export class ChatComponent {
           });
         },
       });
+    }
+  }
+
+  onInput(event: Event): void {
+    const textarea = event.target as HTMLTextAreaElement;
+    // Reset height to auto before adjusting to new scrollHeight
+    textarea.style.height = 'auto';
+    // Adjust height based on scrollHeight
+    if (textarea.scrollHeight > textarea.clientHeight) {
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }
+
+  onKeydown(event: KeyboardEvent): void {
+    // Trigger send message on 'Enter' key (without shift)
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault(); // Prevent new line
+      this.sendMessage();
     }
   }
 }
