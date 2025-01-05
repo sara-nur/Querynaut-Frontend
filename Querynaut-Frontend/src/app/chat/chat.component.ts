@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
 import { NgFor, NgIf } from '@angular/common'; // Import Angular core directives
 import { CommonModule } from '@angular/common';
@@ -21,16 +22,39 @@ export class ChatComponent {
   ];
   userMessage = '';
 
+  // Inject HttpClient
+  constructor(private http: HttpClient) {}
+
   sendMessage() {
     if (this.userMessage.trim() !== '') {
-      this.messages.push({ text: this.userMessage, type: 'user-message' });
+      const userMessageText = this.userMessage; // Save message before clearing
+
+      // Add user message to chat
+      this.messages.push({ text: userMessageText, type: 'user-message' });
       this.userMessage = '';
-      setTimeout(() => {
-        this.messages.push({
-          text: 'Thank you for your message. We will get back to you shortly!',
-          type: 'bot-message',
-        });
-      }, 1000);
+
+      // Send HTTP POST request
+      const apiUrl = 'http://localhost:5000/api/query';
+      const requestBody = {
+        query: userMessageText,
+      };
+
+      this.http.post<{ response: string }>(apiUrl, requestBody).subscribe({
+        next: (response) => {
+          console.log(response);
+          this.messages.push({
+            text: response.response || 'No response received',
+            type: 'bot-message',
+          });
+        },
+        error: (err) => {
+          console.error('Error sending message:', err);
+          this.messages.push({
+            text: 'Sorry, there was an error processing your request.',
+            type: 'bot-message',
+          });
+        },
+      });
     }
   }
 }
