@@ -1,5 +1,40 @@
 # Querynaut-Frontend
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+
+## Setup Instructions
+
+#### 1. Clone the Repository
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/querynaut-frontend.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd querynaut-frontend
+```
+
+#### 2. Install Dependencies
+
+Install the required node modules by running:
+
+```bash
+npm install
+```
+
+#### 3. Run the Development Server
+
+Start the local development server:
+
+```bash
+ng serve
+```
+
+Once the server is running, open your browser and navigate to [http://localhost:4200](http://localhost:4200/). 
 
 ## Development server
 
