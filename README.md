@@ -9,7 +9,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/querynaut-frontend.git
+git clone git@github.com:sara-nur/Querynaut-Frontend.git
 ```
 
 Navigate to the project directory:
